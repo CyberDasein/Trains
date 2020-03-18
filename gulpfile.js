@@ -66,11 +66,10 @@ gulp.task('pug', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('sass', () => {
+gulp.task('scss', () => {
   return gulp.src([
-    src_assets_folder + 'sass/**/*.sass',
-    src_assets_folder + 'scss/**/*.scss'
-  ], { since: gulp.lastRun('sass') })
+    src_assets_folder + 'sass/**/*.scss'
+  ], { since: gulp.lastRun('scss') })
     .pipe(sourcemaps.init())
       .pipe(plumber())
       .pipe(dependents())
@@ -147,9 +146,9 @@ gulp.task('vendor', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('build', gulp.series('clear', 'html', 'pug', 'sass', 'less', 'stylus', 'js', 'images', 'vendor'));
+gulp.task('build', gulp.series('clear', 'html', 'pug', 'scss', 'less', 'stylus', 'js', 'images', 'vendor'));
 
-gulp.task('dev', gulp.series('html', 'pug', 'sass', 'less', 'stylus', 'js'));
+gulp.task('dev', gulp.series('html', 'pug', 'scss', 'less', 'stylus', 'js'));
 
 gulp.task('serve', () => {
   return browserSync.init({
@@ -175,8 +174,7 @@ gulp.task('watch', () => {
   const watch = [
     src_folder + '**/*.html',
     src_folder + 'pug/**/*.pug',
-    src_assets_folder + 'sass/**/*.sass',
-    src_assets_folder + 'scss/**/*.scss',
+    src_assets_folder + 'sass/**/*.scss',
     src_assets_folder + 'less/**/*.less',
     src_assets_folder + 'stylus/**/*.styl',
     src_assets_folder + 'js/**/*.js'
