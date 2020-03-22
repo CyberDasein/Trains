@@ -1,9 +1,56 @@
 extends templates/_default
 
 block content
-  h1.title Gulp Starter Kit
+  header.header
+    .container
+      .header-top
+        .header-top__wrap
+          .header-top__curr Currency : GBP
+          
+          .header-top__auth
+            a.header-top__link(href='#') Register          
+            a.header-top__link(href='#') Sign In
+          
+          .header-top__cycle 
+            .header-top__icon
+              img(src="/assets/images/shop.png", width='17px' alt="")
+            .header-top__text empty
+            .icon-arrow
+              a(href='#')
+                img(src="/assets/images/down-arrow.svg", width='15px' height='10px' alt="")
+            
+    
+  
+      .header__wrapper
+        
+        .header__logo 
+          span avenue 
+          |fashion
 
-  p.description
-    strong A simple Gulp 4 Starter Kit for modern web development.
 
-  img.image(src="/assets/images/sample.jpg" alt="")
+        ul.header-navigation    
+          
+          li.header-navigation__item
+            a.header-navigation__link.--active(href='#') look book
+            
+          
+          li.header-navigation__item 
+            a.header-navigation__link(href='#') local stores
+          
+          li.header-navigation__item 
+            a.header-navigation__link(href='#') the brand   
+          
+          li.header-navigation__item 
+            a.header-navigation__link(href='#') womens    
+          
+          li.header-navigation__item 
+            a.header-navigation__link(href='#') mens   
+        
+        form(action)
+          .header__search  
+            input(placeholder='search...' type='search')
+            input(placeholder='search...' type='submit' value='')
+
+      .header__img-wrap    
+        img.header__img(src="/assets/images/photo.png" alt="").
+        .header__text-logo A  V  E 

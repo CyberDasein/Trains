@@ -1,4 +1,13 @@
-.title {
-  font-size: 10px;
-  background-color: #fff;
+@import './header.scss';
+@import './vars.scss';
+
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1800px;
 }
+body {
+    background-color: $bg;
+}
+
